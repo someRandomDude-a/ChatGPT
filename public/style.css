@@ -17,21 +17,30 @@ body {
     width: 80%;
     max-width: 600px;
     text-align: center;
+    box-sizing: border-box; /* Ensure padding and border are included in width */
 }
 
 h1 {
+    margin-bottom: 10px;
+    color: #4a4a4a;
+}
+
+p {
     margin-bottom: 20px;
     color: #4a4a4a;
 }
 
 textarea {
-    width: 100%;
+    width: calc(100% - 20px); /* Adjust width to account for padding */
     height: 100px;
     padding: 10px;
-    margin-bottom: 20px;
+    margin: 0 auto 20px; /* Center textarea horizontally */
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
+    resize: vertical; /* Allow only vertical resizing */
+    display: block; /* Make textarea a block element */
+    box-sizing: border-box; /* Ensure padding and border are included in width */
 }
 
 button {

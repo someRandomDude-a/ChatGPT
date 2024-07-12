@@ -3,39 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChatGPT Test prompt</title>
+    <title>ChatGPT Test Prompt</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>A basic interface to test the API and make sure it works properly <br> This is using ChatGPT</h1>
-        <textarea id="prompt" placeholder="Enter your context here..."></textarea>
-        <button onclick="generateElements()">Generate</button>
+        <h1>A Basic Interface to Test the API</h1>
+        <p>This is using ChatGPT</p>
+        <form id="promptForm">
+            <textarea id="prompt" placeholder="Enter your context here..."></textarea>
+            <button type="submit">Generate</button>
+        </form>
         <div id="output"></div>
     </div>
-
-    <script>
-        async function generateElements() {
-            const prompt = document.getElementById('prompt').value;
-            const response = await fetch('/generate', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ prompt: prompt })
-            });
-
-            const data = await response.json();
-            const output = document.getElementById('output');
-
-            // Clear the output div
-            output.innerHTML = '';
-
-            // Add the generated text as a new element
-            const generatedText = document.createElement('p');
-            generatedText.textContent = data.choices[0].text.trim();
-            output.appendChild(generatedText);
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
